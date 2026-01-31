@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 350 100% 95%;
+    --foreground: 350 50% 20%;
+
+    --card: 350 80% 98%;
+    --card-foreground: 350 50% 20%;
+
+    --popover: 350 80% 98%;
+    --popover-foreground: 350 50% 20%;
+
+    --primary: 350 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 60% 90%;
+    --secondary-foreground: 350 50% 25%;
+
+    --muted: 350 40% 92%;
+    --muted-foreground: 350 30% 45%;
+
+    --accent: 350 70% 85%;
+    --accent-foreground: 350 50% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 350 50% 85%;
+    --input: 350 50% 85%;
+    --ring: 350 80% 50%;
+
+    --radius: 1rem;
+
+    /* Custom romantic colors */
+    --rose-pink: 350 100% 88%;
+    --deep-rose: 350 80% 60%;
+    --blush: 350 60% 95%;
+    --heart-red: 0 85% 50%;
+    --ring-silver: 0 0% 85%;
+    --diamond-white: 0 0% 98%;
+    --gold-accent: 45 100% 50%;
+
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(350 100% 95%) 0%, hsl(350 80% 90%) 50%, hsl(340 70% 88%) 100%);
+    --gradient-heart: linear-gradient(135deg, hsl(0 85% 55%) 0%, hsl(350 90% 45%) 100%);
+    --gradient-ring-box: linear-gradient(180deg, hsl(0 70% 35%) 0%, hsl(0 80% 25%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 350 30% 10%;
+    --foreground: 350 20% 95%;
+
+    --card: 350 30% 12%;
+    --card-foreground: 350 20% 95%;
+
+    --popover: 350 30% 12%;
+    --popover-foreground: 350 20% 95%;
+
+    --primary: 350 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 40% 20%;
+    --secondary-foreground: 350 20% 90%;
+
+    --muted: 350 30% 18%;
+    --muted-foreground: 350 20% 65%;
+
+    --accent: 350 50% 25%;
+    --accent-foreground: 350 20% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 350 30% 20%;
+    --input: 350 30% 20%;
+    --ring: 350 80% 60%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .font-romantic {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .font-elegant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .text-gradient-romantic {
+    background: linear-gradient(135deg, hsl(350 80% 50%) 0%, hsl(0 85% 50%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-romantic {
+    background: var(--gradient-romantic);
+  }
+
+  .heart-shadow {
+    filter: drop-shadow(0 10px 30px hsl(0 85% 50% / 0.4));
+  }
+
+  .sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotateY(0deg); }
+    50% { transform: translateY(-20px) rotateY(10deg); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(0 85% 50% / 0.4); }
+    50% { box-shadow: 0 0 40px hsl(0 85% 50% / 0.6), 0 0 60px hsl(0 85% 50% / 0.3); }
+  }
+
+  @keyframes ring-shine {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .ring-shine {
+    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.8), transparent);
+    background-size: 200% 100%;
+    animation: ring-shine 2s linear infinite;
+  }
+}
